@@ -154,7 +154,7 @@ task :start do
   logdir = File.join(build_root, "log")
   FileUtils.mkdir_p javatmp
   FileUtils.mkdir_p logdir
-  cmd = ["java", "-XX:PermSize=512M", "-XX:MaxPermSize=512M", "-Xmn128M", "-Xms512M", "-Xmx512M", "-Djava.io.tmpdir=#{javatmp}", "-jar", WAR_LOCATION]
+  cmd = ["java", "-XX:PermSize=512M", "-XX:MaxPermSize=1048M", "-Xmn128M", "-Xms512M", "-Xmx1048M", "-Djava.io.tmpdir=#{javatmp}", "-jar", WAR_LOCATION]
   cmd << "--httpPort=#{httpPort}"
   cmd << "--ajp13Port=#{ajp13Port}"
   cmd << "--logfile=#{logdir}/jenkins.log"
